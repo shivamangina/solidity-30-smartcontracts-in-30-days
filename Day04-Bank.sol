@@ -40,7 +40,7 @@ contract Bank {
         require(userAccounts[msg.sender].isExists==true, 'Account is not created');
         require(userAccounts[_toAddress].isExists==true, 'To Account is not created');
 
-      require(userAccounts[msg.sender].balance>_amount, 'insufficent balance in Bank account');
+      require(userAccounts[msg.sender].balance>_amount, 'Insufficent balance in Bank account');
 
        userAccounts[msg.sender].balance = userAccounts[msg.sender].balance - _amount;
        userAccounts[_toAddress].balance = userAccounts[msg.sender].balance + _amount;
