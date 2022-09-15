@@ -1,7 +1,11 @@
 // SPDX-License-Identifier: MIT 
 pragma solidity ^0.8.13;
 
-
+/**
+ * require statement 
+ * math operations
+ * functions
+ */
 contract Calulator {
  uint result;
 
@@ -26,3 +30,5 @@ contract Calulator {
      return result;
  }
 }
+
+

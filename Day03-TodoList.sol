@@ -1,6 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
+/**
+ * for loop
+ * struct 
+ * mapping
+ * Array - delete and Add
+ */
+
 contract TodoList {
     struct Todo {
         string text;
@@ -16,7 +23,9 @@ contract TodoList {
 
     // add a function to remove a TODO item
     function remove(uint256 _index) public {
-        todos[msg.sender][_index] = todos[msg.sender][todos[msg.sender].length - 1];
+        todos[msg.sender][_index] = todos[msg.sender][
+            todos[msg.sender].length - 1
+        ];
         todos[msg.sender].pop();
     }
 
@@ -42,7 +51,7 @@ contract TodoList {
     function getCompletedItems() public view returns (Todo[] memory) {
         // return the list of completed todo items
 
-         Todo[] memory completedTodos =new Todo[](todos[msg.sender].length);
+        Todo[] memory completedTodos = new Todo[](todos[msg.sender].length);
         for (uint256 i = 0; i < todos[msg.sender].length; i++) {
             if (todos[msg.sender][i].done == true) {
                 completedTodos[i] = (todos[msg.sender][i]);
@@ -53,10 +62,10 @@ contract TodoList {
 
     // add a function to get all uncompleted todo items
     function getUncompletedItems() public view returns (Todo[] memory) {
-        Todo[] memory completedTodos =new Todo[](todos[msg.sender].length);
+        Todo[] memory completedTodos = new Todo[](todos[msg.sender].length);
         for (uint256 i = 0; i < todos[msg.sender].length; i++) {
             if (todos[msg.sender][i].done == false) {
-                 completedTodos[i] = (todos[msg.sender][i]);
+                completedTodos[i] = (todos[msg.sender][i]);
             }
         }
         return completedTodos;
