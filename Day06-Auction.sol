@@ -28,6 +28,7 @@ contract Auction {
     }
 
     function endAuction() public {
+        require(msg.sender == beneficiaryAddress);
         // only beneficiaryAddress can cancel
 
         require(block.timestamp >= endTime); // auction did not yet end
@@ -42,6 +43,7 @@ contract Auction {
     }
 
     function cancelAuction() public {
+        require(msg.sender == beneficiaryAddress);
         // only beneficiaryAddress can cancel
         auctionComplete = true;
     }
@@ -67,6 +69,7 @@ contract Auction {
     }
 
     function withdraw() public returns (bool) {
+        require(msg.sender == beneficiaryAddress);
         uint256 bidAmount = returnsPending[msg.sender];
         if (bidAmount > 0) {
             // It is important to set this to zero because the recipient
