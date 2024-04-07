@@ -20,7 +20,7 @@
 | 13.    | Arrays                |       |              |
 | 14.    | Strings               |       |              |
 | 15.    | Pausable              |       |              |
-| 16.    | Assembly Into         |       |              |
+| 16.    | Assembly Intro         |       |              |
 | 17.    | Assembly Loop         |       |              |
 | 18.    | MultiSigWallet        |       |              |
 | 19.    | FactoryPattern        |       |              |
